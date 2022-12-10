@@ -1,0 +1,13 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'New Site'
+disableKinds = ['taxonomy', 'term', 'section']
+
+[markup]
+  [markup.highlight]
+      noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+enableGitInfo = true

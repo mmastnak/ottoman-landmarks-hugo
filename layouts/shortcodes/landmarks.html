@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+      <th>Country</th>
+      <th>Landmark type</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{ range .Site.Data.landmarks }}
+      <tr>
+        <td>{{ .country }}</td>
+        <td>{{ .type }}</td>
+        <td>{{ .name }}</td>
+        <td>{{ .city }}</td>
+        <td>{{ .comment }}</td>
+      </tr>
+    {{ end }}
+    </tbody>
+  </table>

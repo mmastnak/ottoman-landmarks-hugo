@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" charset="utf-8">
+  <head>
+
+    {{ $options := (dict "outputStyle" "compressed") }}
+
+    <!-- CSS -->
+    <!-- ------------------------------------------------------- -->
+    {{ $csscm := resources.Get "scss/cm.scss" | resources.ToCSS $options }}
+    {{ $cssmain := resources.Get "scss/main.scss" | resources.ToCSS $options }}
+    {{ $cssbundle := slice $csscm $cssmain | resources.Concat "/css/vendor.css" | minify }}
+    <link rel="stylesheet" href="{{ $cssbundle.RelPermalink }}" >
+    <!-- ------------------------------------------------------- -->
+
+  </head>
+  <body>
+    {{ block "main" . }}
+    {{ end }}
+  </body>
+</html>
